@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <title>Secured</title>
+</head>
+<body>
+<div layout:fragment="content" th:remove="tag">
+    <h1>This is a secured page!</h1>
+    <p><a href="/" th:href="@{/index}">Back to home page</a> <span> You can log out by clicking the link <a href="/logout" th:href="@{/logout}"> LogOut</a></span></p>
+</div>
+</body>
+</html>

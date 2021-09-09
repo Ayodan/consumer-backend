@@ -1,0 +1,38 @@
+server:
+  port: 8095
+
+spring:
+  thymeleaf:
+    cache: false
+    check-template: true
+    check-template-location: true
+    content-type: text/html
+    enabled: true
+    encoding: UTF-8
+    mode: HTML
+    prefix: classpath:/templates/
+    suffix: .html
+    # excluded-view-names:
+    # template-resolver-order:
+    # view-names:
+
+security:
+  jwt:
+    key-store: classpath:mykeystore.jks
+    key-store-password: olaolu
+    key-pair-alias: servercert
+    key-pair-password: olaolu
+
+  spring:
+    security:
+      oauth2:
+        client:
+          registration:
+            google:
+              clientId: 993886429948-94a90j5f1n3cggevr2tmpugf131tq3qo.apps.googleusercontent.com
+              clientSecret: 1RLS6FJWnpVos4FXdMsCQXrh
+              clientName: TechGeekNextOAuthWebClient
+              redirectUriTemplate: "http://localhost:8080/login/oauth2/code/google"
+              scope:
+                - email
+                - profile
